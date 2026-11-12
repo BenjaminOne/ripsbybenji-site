@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Odds and Fairness Disclosure · Benji's Rips</title>
+<meta name="theme-color" content="#081226">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<style>
+:root{--stage:#081226;--panel:#13244A;--ink:#EEF3FA;--ink-2:#9DB0CC;--cash-a:#2BD67B;--gold-a:#F7C948}
+*{box-sizing:border-box}
+body{margin:0;background:var(--stage);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-wrap:anywhere}
+.wrap{max-width:760px;margin:0 auto;padding:32px 16px 48px}
+.back{display:inline-block;margin-bottom:24px;color:var(--ink-2);text-decoration:none;font-weight:600;font-size:14px}
+h1{margin:0 0 6px;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(36px,8vw,60px);line-height:.95}
+.meta{margin:0 0 28px;color:var(--ink-2);font-size:14px}
+h2{margin:32px 0 8px;font-size:18px;color:var(--gold-a)}
+p,li,td,th{font-size:16px}
+.caps{font-weight:700}
+.notice{padding:12px 16px;border-radius:12px;background:var(--panel);border:1px solid rgba(247,201,72,.4)}
+ul,ol{padding-left:22px}
+li{margin:4px 0}
+a{color:var(--cash-a)}
+.scroll{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:10px 12px;border:1px solid rgba(238,243,250,.16);text-align:left;vertical-align:top;font-size:14px;overflow-wrap:normal}
+td:first-child,th:first-child{min-width:130px}
+th{background:var(--panel)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 32px;color:var(--ink-2);font-size:13px}
+footer a{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← Back to Benji's Rips</a>
+  <h1>Odds and Fairness Disclosure</h1>
+  <p class="meta">Effective November 12, 2026 · Last updated November 12, 2026 · Version 1.0</p>
+  <p>This disclosure explains how Benji's Rips publishes pack odds, how the Card in each Pack is decided, and how that can be checked. It is part of the Benji's Rips Terms of Use, operated by Benjamin Capital Partners, Inc.</p>
+  <h2>1. Who sets the odds</h2>
+  <p>Every Pack is supplied by our card partner, Phygitals Inc. Each Pack's contents, odds and price are agreed between Phygitals and us and approved by both before the Pack is released. Phygitals sources the Cards, runs the random selection and quotes the sell-back offers. Phygitals is required to use a cryptographically secure random selection process, and the odds and contents used for every opening must match the ones disclosed for that Pack.</p>
+  <h2>2. What we publish before you buy</h2>
+  <p>Every Pack page shows, before any purchase:</p>
+  <ul><li>the Pack price in U.S. dollars;</li><li>the odds of each value tier, as a percentage;</li><li>the Cards and value range in each tier, and the current number of Cards remaining where Phygitals provides it;</li><li>the Pack's sell-back percentage, which sets the sell-back offer for every Card pulled from it;</li><li>the expected value: the odds-weighted average Card value as a percentage of the Pack price, before sell-back. It is an average across many Packs, not a promise about any one Pack;</li><li>the full list of Cards in the Pack;</li><li>recent pulls from the Pack.</li></ul>
+  <p>Odds, values and stock are shown exactly as Phygitals' systems provide them, without rounding up. Any figure we derive from them is calculated on our servers from those values and is hidden if an input is missing. Odds can change between purchases as Cards are pulled and restocked; the odds shown when you confirm a purchase are the ones that apply to it.</p>
+  <h2>3. The same odds for everyone</h2>
+  <p>Odds are set per Pack, not per user. We do not adjust odds for any user, account, spending level or history, and we do not use undisclosed or personalised odds.</p>
+  <h2>4. How the Card is decided: commit-reveal</h2>
+  <p>Every live purchase uses a commit-reveal process, the standard method for provably fair draws:</p>
+  <ol><li><strong>Commit.</strong> Before you confirm a purchase, a secret server seed is generated for your draw and the app shows you its SHA-256 hash. The hash fixes the seed in advance without revealing it.</li><li><strong>Purchase.</strong> Your purchase is placed with Phygitals bound to that commitment, together with a client seed, so the result cannot be changed after you pay.</li><li><strong>Reveal.</strong> The Card is drawn and allocated to you. After the reveal, the app shows the fairness proof for the pull: the server seed, the client seed and the proof hash.</li><li><strong>Verify.</strong> The app checks on your own device that the SHA-256 hash of the revealed server seed matches the hash you were shown before you paid, and that the proof and client seed match the purchase. You can repeat the check yourself with any SHA-256 tool.</li></ol>
+  <p>Because the Card is fixed before you pay, nothing that happens during the opening animation, such as how long you watch or when you tap, affects the result. The animation shows the Card you already received. There are no reels, spinners or near-miss effects.</p>
+  <h2>5. Records and checks</h2>
+  <ul><li>Every purchase keeps the Pack, the price paid, the full Card record and the Card's value at the time of the pull.</li><li>Phygitals keeps records sufficient to investigate any selection or configuration error, and we can ask it to investigate a credible discrepancy using its draw records.</li><li>Our systems reconcile purchases, sell-backs and shipments with Phygitals' records.</li><li>If you think a result was wrong, contact <a href="mailto:hello@ripsbybenji.com">hello@ripsbybenji.com</a> with the purchase date and Pack. We will check the purchase record and the draw with Phygitals.</li></ul>
+  <h2>6. Values and sell-back</h2>
+  <p>Card values are estimates based on Phygitals' pricing and market sales data, and change over time. Each Card's sell-back offer equals the Pack's published sell-back percentage applied to the Card's value at the time of purchase, and is open for 7 days. If you do not ship the Card or accept the offer within 7 days, the offer is accepted for you just before it ends. No Pack guarantees that the Card you receive will be worth the Pack price.</p>
+  <h2>7. Risk disclosure</h2>
+  <p>Every Pack is subject to Phygitals' Risk Disclosure Statement. Read it before you buy: <a href="https://docs.phygitals.com/user-agreements/risk-disclosure-statement">https://docs.phygitals.com/user-agreements/risk-disclosure-statement</a>. A Card can be worth less than the price of the Pack, Card values change over time, and Packs are for collecting and fun, not a way to make money.</p>
+</div>
+<footer><p><a href="terms.html">Terms of Use</a> · <a href="refunds.html">Refund Policy</a> · <a href="privacy-policy.html">Privacy Policy</a></p><p>© 2026 Benjamin Capital Partners, Inc.</p></footer>
+</body>
+</html>
